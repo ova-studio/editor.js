@@ -154,7 +154,7 @@ export default class UI extends Module<UINodes> {
     /**
      * Load and append CSS
      */
-    this.loadStyles();
+    this.loadStyles(this.nodes.holder);
   }
 
   /**
@@ -294,7 +294,7 @@ export default class UI extends Module<UINodes> {
   /**
    * Appends CSS
    */
-  private loadStyles(): void {
+  private loadStyles(holder?: HTMLElement): void {
     /**
      * Load CSS
      */
@@ -319,7 +319,7 @@ export default class UI extends Module<UINodes> {
     /**
      * Append styles at the top of HEAD tag
      */
-    $.prepend(document.head, tag);
+    $.prepend(holder || document.head, tag);
   }
 
   /**
